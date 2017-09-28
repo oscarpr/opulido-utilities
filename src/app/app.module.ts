@@ -10,7 +10,7 @@ import { ExceltojsonComponent } from './exceltojson/exceltojson.component';
 
 const routes: Route[] = [
 	{ path: 'exceltojson', loadChildren: './exceltojson/exceltojson.module#ExceltoJSONModule' }
-]
+];
 
 @NgModule({
 	declarations: [

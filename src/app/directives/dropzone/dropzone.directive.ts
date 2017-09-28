@@ -7,16 +7,18 @@ declare var Dropzone: any;
 })
 export class DropzoneDirective implements OnInit {
 
-    @Output('fileLoaded') _fileLoaded: EventEmitter<any> = new EventEmitter();
+    @Output() fileLoaded: EventEmitter<any> = new EventEmitter();
 
     constructor(private el: ElementRef) { }
 
     ngOnInit(): void {
-        let _this = this;
-        let dropzone: any = new Dropzone(this.el.nativeElement, {
+        const _this = this;
+        const dropzone: any = new Dropzone(this.el.nativeElement, {
+            maxFiles: 1,
+            acceptedFiles: 'application/xls,application/excel,application/vnd.ms-excel,application/vnd.ms-excel; charset=binary,application/msexcel,application/x-excel,application/x-msexcel,application/x-ms-excel,application/x-dos_ms_excel',
             init: function () {
                 this.on('addedfile', function (file) {
-                    _this._fileLoaded.emit(file);
+                    _this.fileLoaded.emit(file);
                 });
             }
         });

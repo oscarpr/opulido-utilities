@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MdButton } from "@angular/material";
+import { MdButton } from '@angular/material';
 import * as XLSX from 'xlsx';
 
 declare var jQuery: any;
@@ -27,19 +27,20 @@ export class ExceltojsonComponent implements OnInit {
 		});
 	}
 
+
 	ngOnInit() { }
 
 
-	private addSetting(): void {		
+	addSetting(): void {
 		if (this.settingsForm.valid) {
-			let setting: Object = this.settingsForm.value;
+			const setting: Object = this.settingsForm.value;
 			this.settings.push(setting);
 			this.settingsForm.reset();
 		}
 	}
 
 
-	private onFileLoaded(file: any) {
+	onFileLoaded(file: any) {
 		const reader: FileReader = new FileReader();
 		reader.onload = (e: any) => {
 			const bstr: string = e.target.result;
@@ -50,7 +51,7 @@ export class ExceltojsonComponent implements OnInit {
 
 			this.result = XLSX.utils.sheet_to_json(ws, { header: 1 });
 			this.result = this.proccessResults(this.propertiessource);
-		}
+		};
 		reader.readAsBinaryString(file);
 	}
 
@@ -77,7 +78,7 @@ export class ExceltojsonComponent implements OnInit {
 		});
 
 		data = data.map((row: Array<string>) => {
-			let aux: Object = {};
+			const aux: Object = {};
 			properties.forEach((prop: string, index) => {
 				aux[prop] = row[index];
 			});
@@ -94,7 +95,7 @@ export class ExceltojsonComponent implements OnInit {
 		data.splice(0, 1);
 
 		response = data.map((reg: Array<string>) => {
-			let aux: Object = {};
+			const aux: Object = {};
 
 			settings.forEach((setting: any) => {
 				aux[setting['propertyName']] = reg[setting['columnNumber']];
@@ -108,14 +109,10 @@ export class ExceltojsonComponent implements OnInit {
 	}
 
 
-	private downloadJSON(button: MdButton) {
-		let downloadButton = jQuery(button._elementRef.nativeElement);
-
-		let data = JSON.stringify(this.result, null, '\t');
-
-
+	downloadJSON(button: MdButton) {
+		const downloadButton = jQuery(button._elementRef.nativeElement);
+		const data = JSON.stringify(this.result, null, '\t');
 		downloadButton.attr('href', `data:text/json;charset=utf-8,${encodeURIComponent(data)}`);
-
 		downloadButton.attr('download', 'excel.json');
 	}
 

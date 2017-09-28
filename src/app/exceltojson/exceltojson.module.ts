@@ -1,7 +1,7 @@
 import { DropzoneModule } from './../directives/dropzone/dropzone.module';
 import { Route, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { CommonModule } from "@angular/common";
+import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ExceltojsonComponent } from './exceltojson.component';
@@ -14,7 +14,7 @@ import {
 
 const routes: Route[] = [
     { path: '', component: ExceltojsonComponent }
-]
+];
 
 @NgModule({
     imports: [
