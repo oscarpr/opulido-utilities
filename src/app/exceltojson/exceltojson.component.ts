@@ -30,9 +30,7 @@ export class ExceltojsonComponent implements OnInit {
 	ngOnInit() { }
 
 
-	private addSetting(): void {
-		console.log(this.settingsForm.valid);
-		
+	private addSetting(): void {		
 		if (this.settingsForm.valid) {
 			let setting: Object = this.settingsForm.value;
 			this.settings.push(setting);
