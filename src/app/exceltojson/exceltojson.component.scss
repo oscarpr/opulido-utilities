@@ -1,0 +1,35 @@
+.title-source-group {
+	display: inline-flex;
+	flex-direction: column;
+}
+  
+.title-source-radio {
+	margin: 5px;
+}
+  
+.example-selected-value {
+	margin: 15px 0;
+}
+
+#column-number-input{
+	width: 10%;
+}
+
+.card-col-2{
+	display: inline-block;
+	width: 50%;
+}
+
+md-list-item{
+	display: inline-block !important;
+}
+
+.result-card{
+	margin-top: 10pt;
+}
+
+.result-card-content{
+	max-height: 33vh;
+	overflow-y: hidden;
+	text-overflow: ellipsis;
+}
