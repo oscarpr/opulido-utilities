@@ -1,5 +1,11 @@
-.example-fill-remaining-space{
-    flex: 1 1 auto;
+@import '../../scss/variables';
+
+
+.libs-headers{
+    background-color: $ligth-black;
+    box-shadow: 2px 2px 5px $semi-light-black;
+	-webkit-box-shadow: 2px 2px 5px $semi-light-black;
+	-moz-box-shadow: 2px 2px 5px $semi-light-black;
 }
 
 .perfil-image{

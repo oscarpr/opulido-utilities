@@ -9,7 +9,8 @@ import { ExceltojsonComponent } from './exceltojson/exceltojson.component';
 
 
 const routes: Route[] = [
-	{ path: 'exceltojson', loadChildren: './exceltojson/exceltojson.module#ExceltoJSONModule' }
+	{ path: 'app', loadChildren: './layout/layout.module#LayoutModule', pathMatch: 'full' },
+	{ path: '', redirectTo: 'app' , pathMatch: 'full'} 
 ];
 
 @NgModule({
@@ -18,8 +19,6 @@ const routes: Route[] = [
 	],
 	imports: [
 		RouterModule.forRoot(routes),
-		HeaderModule,
-		SidebarModule,
 		BrowserModule
 	],
 	providers: [],

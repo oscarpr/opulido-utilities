@@ -1,14 +1,24 @@
-<md-sidenav-container class="example-sidenav-fab-container">
-	<md-sidenav #sidenav mode="side" opened="true">
-		<div class="example-scrolling-content">
-			<md-list>
-				<h3 md-subheader>General Utilities</h3>
-				<md-list-item [routerLink]="'exceltojson'">
-					<h4 md-line>EXCEL to JSON</h4>
-				</md-list-item>
-				<md-divider></md-divider>
-			</md-list>
-		</div>
-	</md-sidenav>
-	<ng-content></ng-content>
-</md-sidenav-container>
+<div class="libs-sidebar">
+	<section class="libs-sidebar___section">
+		<p class="title">
+			Utilities
+		</p>
+		<ul>
+			<li>
+				<a [routerLink]="'exceltojson'">Excel to json</a>
+			</li>
+		</ul>
+	</section>
+	
+	<section class="libs-sidebar___section">
+		<p class="title">
+			Libreries
+		</p>
+		<ul>
+			<li>
+				<a>Autocomplete</a>
+			</li>
+		</ul>
+
+	</section>
+</div>

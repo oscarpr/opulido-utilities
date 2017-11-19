@@ -14,7 +14,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         MatSidenavModule,
         MatListModule,
         MatIconModule,
-        BrowserAnimationsModule,
     ],
     declarations: [
         SidebarComponent

@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MdButton } from '@angular/material';
+// import { MdButton } from '@angular/material';
 import * as XLSX from 'xlsx';
 
 declare var jQuery: any;
@@ -109,7 +109,7 @@ export class ExceltojsonComponent implements OnInit {
 	}
 
 
-	downloadJSON(button: MdButton) {
+	downloadJSON(button: any) {
 		const downloadButton = jQuery(button._elementRef.nativeElement);
 		const data = JSON.stringify(this.result, null, '\t');
 		downloadButton.attr('href', `data:text/json;charset=utf-8,${encodeURIComponent(data)}`);
