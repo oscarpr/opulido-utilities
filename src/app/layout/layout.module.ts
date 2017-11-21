@@ -6,20 +6,25 @@ import { SidebarModule } from '../sidebar/sidebar.module';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: '', component: LayoutComponent, children: [
-      { path: 'exceltojson', loadChildren: '../exceltojson/exceltojson.module#ExceltoJSONModule' }
-    ]
-  },
+	{
+		path: '', component: LayoutComponent,
+		children:
+			[
+				{ 
+					path: 'exceltojson', 
+					loadChildren: '../exceltojson/exceltojson.module#ExceltoJSONModule'
+				}
+			]
+	}
 ]
 
 @NgModule({
-  imports: [
-    CommonModule,
-    HeaderModule,
-    SidebarModule,
-    RouterModule.forChild(routes)
-  ],
-  declarations: [LayoutComponent]
+	imports: [
+		CommonModule,
+		HeaderModule,
+		SidebarModule,
+		RouterModule.forChild(routes)
+	],
+	declarations: [LayoutComponent]
 })
 export class LayoutModule { }

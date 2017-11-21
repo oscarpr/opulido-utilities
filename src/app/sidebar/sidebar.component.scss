@@ -2,7 +2,7 @@
 
 .libs-sidebar{
 	position: absolute;
-	background-color: $ligth-black;
+	background-color: $side-nav___background;
 	width: 15%;
 	height: 100%;
 	display: inline-block;
@@ -25,7 +25,7 @@
 		text-decoration: none;
 		color: $black;
 		&:hover{
-			color: $green;
+			color: $ligth-black;
 		}
 	}
 }

@@ -9,7 +9,7 @@ import { ExceltojsonComponent } from './exceltojson/exceltojson.component';
 
 
 const routes: Route[] = [
-	{ path: 'app', loadChildren: './layout/layout.module#LayoutModule', pathMatch: 'full' },
+	{ path: 'app', loadChildren: './layout/layout.module#LayoutModule' },
 	{ path: '', redirectTo: 'app' , pathMatch: 'full'} 
 ];
 

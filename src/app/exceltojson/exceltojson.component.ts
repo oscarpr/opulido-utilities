@@ -19,12 +19,17 @@ export class ExceltojsonComponent implements OnInit {
 	settingsForm: FormGroup;
 	result: Array<Object>;
 
+
+	form: FormGroup;
+
+
 	constructor(private fb: FormBuilder) {
 		this.settings = new Array<Object>();
 		this.settingsForm = this.fb.group({
 			propertyName: ['', Validators.required],
 			columnNumber: ['', Validators.required]
 		});
+		this.createForm();
 	}
 
 
@@ -53,6 +58,14 @@ export class ExceltojsonComponent implements OnInit {
 			this.result = this.proccessResults(this.propertiessource);
 		};
 		reader.readAsBinaryString(file);
+	}
+
+
+	private createForm(): void {
+		this.form = this.fb.group({
+			properiesSource: ['D', Validators.required],
+			propertiesName: this.fb.array([])
+		});
 	}
 
 
